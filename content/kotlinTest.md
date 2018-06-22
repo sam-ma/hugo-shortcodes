@@ -1,23 +1,9 @@
-# hugo-shortcodes
-Custom shortcodes for Hugo
+---
+title: "Kotlin Test"
+date: 2018-06-22T20:41:35+10:00
+draft: true
+---
 
-## 1. Kotlin - for [kotlin playground](https://jetbrains.github.io/kotlin-playground/examples/)
-
-### Set up
-1. copy `layouts/shortcodes/kotlin.html` to `[your hugo site home]/layouts/shortcodes/kotlin.html`
-2. copy `[your hugo site home]/themes/[the theme you choose]/layouts/partials/head.html` to `[your hugo site home]/layouts/partials/header.html`
-3. add the followings into the `<head>` section
-```html
-<script src="https://unpkg.com/kotlin-playground@1" data-selector=".kotlin-code"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-```
-
-### Examples
-1. Basic example
-```kotlin
 {{< kotlin >}}
 class Contact(val id: Int, var email: String) 
 
@@ -26,31 +12,19 @@ fun main(args: Array<String>) {
     println(contact.id)                   
 }
 {{< /kotlin >}}
-```
-![Kotlin test 1](/img/kotlinTest1.png "Kotlin test 1")
 
-2. example using `theme` and `highlight-only`
-```kotlin
 {{< kotlin theme="idea" highlight-only="true" >}}
 fun main(args: Array<String>) {
     println("Hello World!")
 }
 {{< /kotlin >}}
-```
-![Kotlin test 2](/img/kotlinTest2.png "Kotlin test 2")
 
-3. example using `darcula` theme
-```kotlin
 {{< kotlin theme="darcula" highlight-only="true" >}}
 fun main(args: Array<String>) {
     println("Hello World!")
 }
 {{< /kotlin >}}
-```
-![Kotlin test 3](/img/kotlinTest3.png "Kotlin test 3")
 
-4. example using `platform`
-```kotlin
 {{< kotlin platform="js" >}}
 fun sum(a: Int, b: Int): Int {
     return a + b
@@ -60,11 +34,7 @@ fun main(args: Array<String>) {
     print(sum(-1, 8))
 }
 {{< /kotlin >}}
-```
-![Kotlin test 4](/img/kotlinTest4.png "Kotlin test 4")
 
-5. example using `junit` platform
-```kotlin
 {{< kotlin platform="junit" >}}
 import org.junit.Test
 import org.junit.Assert
@@ -88,11 +58,7 @@ fun Pair<Int, Int>.r(): RationalNumber = RationalNumber(first, second)
 data class RationalNumber(val numerator: Int, val denominator: Int)
 //sampleEnd
 {{< /kotlin >}}
-```
-![Kotlin test 5](/img/kotlinTest5.png "Kotlin test 5")
 
-6. example using `folded-button`
-```kotlin
 {{< kotlin platform="junit" folded-button="false" >}}
 import org.junit.Test
 import org.junit.Assert
@@ -113,11 +79,7 @@ The function any gets a predicate as an argument and returns true if there is at
 fun containsEven(collection: Collection<Int>): Boolean = collection.any {[mark]TODO()[/mark]}
 //sampleEnd
 {{< /kotlin >}}
-```
-![Kotlin test 6](/img/kotlinTest6.png "Kotlin test 6")
 
-7. example using `canvas` platform
-```kotlin
 {{< kotlin platform="canvas" >}}
 package fancylines
 
@@ -191,5 +153,15 @@ fun main(args: Array<String>) {
 }
 //sampleEnd
 {{< /kotlin >}}
-```
-![Kotlin test 7](/img/kotlinTest7.png "Kotlin test 7")
+
+{{< kotlin theme="darcula">}}
+//sampleStart
+fun sum(a: Int, b: Int): Int {
+    return a + b
+}
+//sampleEnd
+
+fun main(args: Array<String>) {
+    print(sum(-1, 8))
+}
+{{< /kotlin >}}

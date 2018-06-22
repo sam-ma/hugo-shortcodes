@@ -1,0 +1,11 @@
+<div class="kotlin-code" 
+    {{ if .Get "theme" }}theme="{{ .Get "theme" }}"{{ end }} 
+    data-target-platform="{{ if .Get "platform" }}{{ .Get "platform" }}{{ else }}java{{ end }}"
+    {{ if .Get "folded-button" }}folded-button="{{ .Get "folded-button" }}"{{ end }}
+    {{ if .Get "highlight-only" }}data-highlight-only{{ end }} >
+    <pre>
+        <code class="hljs language-kotlin">
+        {{ .Inner | html }}
+        </code>
+    </pre>
+</div>
