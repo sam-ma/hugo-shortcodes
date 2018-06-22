@@ -15,7 +15,8 @@ Custom shortcodes for Hugo
 <script>hljs.initHighlightingOnLoad();</script>
 ```
 
-### Examples
+### Examples (live demo https://www.shenyan.me/kotlin/hugo-kotlin-example/)
+
 1. Basic example
 ```kotlin
 {{< kotlin >}}
