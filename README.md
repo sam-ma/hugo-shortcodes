@@ -1,6 +1,8 @@
 # hugo-shortcodes
 Custom shortcodes for Hugo
 
+1. [Kotlin shortcodes](https://github.com/sam-ma/hugo-shortcodes#1-kotlin---for-kotlin-playground)
+
 ## 1. Kotlin - for [kotlin playground](https://jetbrains.github.io/kotlin-playground/examples/)
 
 ### Set up
@@ -194,3 +196,47 @@ fun main(args: Array<String>) {
 {{< /kotlin >}}
 ```
 ![Kotlin test 7](/img/kotlinTest7.png "Kotlin test 7")
+
+## 2. Rust - for something similar to [rust book](https://doc.rust-lang.org/book/second-edition/ch01-02-hello-world.html)
+
+### Set up
+1. Copy `layouts/shortcodes/rust.html` to `[your hugo site home]/layouts/shortcodes/rust.html`
+2. Copy `static/css/rust.css` to `[your hugo site home]/static/css/rust.css`
+3. Copy `static/js/rust.js` to `[your hugo site home]/static/js/rust.js`
+4. Copy `[your hugo site home]/themes/[the theme you choose]/layouts/partials/head.html` to `[your hugo site home]/layouts/partials/header.html`
+5. Open the copied `header.html` and add the followings into the `<head>` section
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/rust.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+```
+
+6. Copy `[your hugo site home]/themes/[the theme you choose]/layouts/partials/footer.html` to `[your hugo site home]/layouts/partials/footer.html`
+7. Open the copied `footer.html` and add the followings before the `</body>` tag
+
+```html
+<script src="{{ .Site.BaseURL }}js/rust.js"></script>
+```
+
+### Examples (live demo https://www.shenyan.me/rust/hugo-rust-example/)
+
+1. Basic example
+```rust
+{{< rust >}}
+fn main() {
+    println!("Hello, world!");
+}
+{{< /rust >}}
+```
+![Rust test 1](/img/rustTest1.png "Rust test 1")
+
+2. Hide lines with `#`
+```rust
+{{< rust >}}
+#fn main() {
+    println!("Hello, world!");
+#}
+{{< /rust >}}
+```
+![Rust test 2](/img/rustTest2.png "Rust test 2")
