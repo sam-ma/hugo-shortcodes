@@ -2,6 +2,7 @@
 Custom shortcodes for Hugo
 
 1. [Kotlin shortcodes](https://github.com/sam-ma/hugo-shortcodes#1-kotlin---for-kotlin-playground)
+2. [Rust shortcodes](https://github.com/sam-ma/hugo-shortcodes#2-rust---for-something-similar-to-rust-book)
 
 ## 1. Kotlin - for [kotlin playground](https://jetbrains.github.io/kotlin-playground/examples/)
 
